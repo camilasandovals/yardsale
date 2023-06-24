@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MultiThread Example</title>
+  </head>
+  <body>
+    <button onclick="startWorker()">Start Worker</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+    <div id="output"></div>
+
+    <script>
+      var worker;
+
+      function startWorker() {
+        worker = new Worker("worker.js");
+        worker.onmessage = function (event) {
+          document.getElementById("output").innerHTML += event.data + "<br>";
+          const h1 = document.createElement('h1')
+          document.body.appendChild(h1)
+          const texto = document.createTextNode("this is ")
+          h1.appendChild(texto)
+        };
+      }
+
+      function stopWorker() {
+        worker.terminate();
+      }
+
+    </script>
+  </body>
+</html>
