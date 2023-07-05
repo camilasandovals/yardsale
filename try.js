@@ -1,3 +1,17 @@
+    
+    // process.stdin.resume();
+    // process.stdin.setEncoding('utf-8');
+    // let input = '';
+    // process.stdin.on('data', function (data) {
+    //   input += data;
+    // });
+    
+    // process.stdin.on('end', function () {
+      
+    //   console.log(input)
+    // });
+    
+    
     let lines =  [
         '2',   '3 2', '1 2',
         '2 3', '4 4', '1 2',
