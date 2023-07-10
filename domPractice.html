@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Practice</title>
+</head>
+
+<style>
+    body{
+        background-color: #d6d6d6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div {
+        height: 300px;
+        width: 300px;
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<body>
+
+    <main>
+        <h1>Dom Practice</h1>
+    </main>
+    <section>
+        <div>
+            <h2>Count</h2>
+            <h2 id="here"></h2>
+            <button onclick="sum()">Sum</button>
+            <div id="winner"></div>
+        </div>
+
+        <div id="list-countries">
+            
+
+            
+        </div>
+    </section>
+
+    <script>
+        let result = 0
+        function sum() {
+            result += 1
+            document.getElementById('here').innerHTML = result
+            if (result === 10) {
+                document.getElementById('winner').innerHTML = 'You win!'
+            }
+        }
+
+        //fetch from the api the winners
+        fetch('https://api.sampleapis.com/countries/countries')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                const listCountries = document.getElementById('list-countries')
+                data.forEach(element => {
+                    const h2 = document.createElement('h2')
+                    const text = document.createTextNode(element.capital)
+                    h2.appendChild(text)
+                    listCountries.appendChild(h2)
+                });
+            })
+            .catch(error => console.log(error))     
+        
+
+    </script>
+</body>
+</html>
