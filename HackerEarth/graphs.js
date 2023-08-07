@@ -22,39 +22,39 @@ console.log(adjacencyList);
 
 // --------------BREADTH FIRST SEARCH---------------
 // find all the possible routes to determine which is the best one 
-//this uses queue
+// this uses queue
 
-// function bfs(start) {
-//     const visited = new Set();
-//     const queue = [start]
+function bfs(start) {
+    const visited = new Set();
+    const queue = [start]
 
-//     while(queue.length > 0) {
-//         console.log("visited", visited)
-//         console.log("queue.leng" , queue.length)
-//         console.log("queue" , queue)
-//         const airport = queue.shift();
-//         console.log(airport)
-//         const destinations = adjacencyList.get(airport);
-//         for (const destination of destinations) {
-//             console.log("destination" , destination)
-//             if (destination === 'BKK') {
-//                 console.log(destination, 'found it')
-//             }
-//             if (!visited.has(destination)) {
-//                 console.log("current visited", visited)
-//                 visited.add(destination);
-//                 console.log(destination , "is added to de visited")
-//                 console.log("visited added destination", visited)
-//                 console.log("current queue", queue)
-//                 queue.push(destination)
-//                 console.log(destination, "is added to the queue")
-//                 console.log( "queue", queue)
-//             }
-//         }
-//     }
-// }
+    while(queue.length > 0) {
+        console.log("visited", visited)
+        console.log("queue.leng" , queue.length)
+        console.log("queue" , queue)
+        const airport = queue.shift();
+        console.log(airport)
+        const destinations = adjacencyList.get(airport);
+        for (const destination of destinations) {
+            console.log("destination" , destination)
+            if (destination === 'BKK') {
+                console.log(destination, 'found it')
+            }
+            if (!visited.has(destination)) {
+                console.log("current visited", visited)
+                visited.add(destination);
+                console.log(destination , "is added to de visited")
+                console.log("visited added destination", visited)
+                console.log("current queue", queue)
+                queue.push(destination)
+                console.log(destination, "is added to the queue")
+                console.log( "queue", queue)
+            }
+        }
+    }
+}
 
-// bfs("PHX")
+bfs("PHX")
 
 
 // --------------DEPTH FIRST SEARCH---------------
