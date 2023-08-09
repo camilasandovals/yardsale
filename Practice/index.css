@@ -1,0 +1,11 @@
+:root {
+  --green: rgb(53, 137, 58);
+  --black: rgb(0, 0, 0);
+  --red: rgb(192, 44, 44);
+}
+body{
+  margin: 0;
+}
+
+
+
