@@ -1,4 +1,9 @@
 let tasks = [];
+
+if (localStorage.getItem('tasks')) {
+  tasks = JSON.parse(localStorage.getItem('tasks'));
+  renderTasks()
+}
 // function addTask() {
   
 //   const taskValue = document.querySelector('input[type="text"]').value
@@ -42,7 +47,7 @@ function addTask() {
   if(!taskValue) return
   
   tasks.push(taskValue);
-  
+  localStorage.setItem('tasks', JSON.stringify(tasks))
   //clear de input 
   document.querySelector('input[type=text]').value = ''
 

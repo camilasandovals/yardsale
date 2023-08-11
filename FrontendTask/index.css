@@ -2,10 +2,41 @@
   color: #888;
 }
 
-button {
-  color: red
+body {
+  background-color: black;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
-h1 { 
-  color: green
+button {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: paleturquoise;
+  width: 300px;
+
 }
+
+h1, h2 { 
+  color: whitesmoke
+}
+
+ul {
+  color: whitesmoke;
+  list-style: none;
+}
+
+ul li {
+  margin: 20px;
+  background-color: antiquewhite;
+  justify-content: space-around;
+}
+input {
+  padding: 15px;
+  width: 300px;
+  
+}
+
